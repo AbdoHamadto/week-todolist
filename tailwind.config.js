@@ -7,13 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       backgroundColor: {
-        "light-gray" : "#333"
+        "bgNav" : "#0B6477",
+        "bgBody" : "#213A57",
+        "bgSpace" : "#80ED99",
+        "bgCard" : "#0AD1C8",
+        "bgTaske" : "#14919B",
+        "bgTaskes" : "#45DFB1",
+      },
+      colors: {
+        "t" : "#14919B",
+        "u" : "#0AD1C8",
+        "bgText" : "#45DFB1",
       }
     },
   },
