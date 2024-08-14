@@ -15,8 +15,8 @@ const MapTaskes = () => {
             <ul className="py-3 px-4 bg-bgTaske rounded-b-3xl h-64 overflow-y-auto">
                 {item.taskes.map((item, index) => {return(
                   <li key={index} className="relative group overflow-hidden text-lg bg-bgTaskes mt-2 mb-3 py-2 cursor-pointer">
-                    <p className="mx-3">{item}</p>
-                    <div className="absolute w-1 h-full bg-red-500 duration-300 -translate-y-20 group-hover:-translate-y-9"/>
+                    <p className="mx-3 text-darkblue hover:text-bgDone hover:line-through ">{item}</p>
+                    <div className="absolute w-1 h-full bg-bgText duration-300 -translate-y-20 group-hover:-translate-y-9"/>
                   </li>
                 )})}
             </ul>

@@ -16,9 +16,9 @@ module.exports = {
         "bgTaskes" : "#45DFB1",
       },
       colors: {
-        "t" : "#14919B",
-        "u" : "#0AD1C8",
-        "bgText" : "#45DFB1",
+        "bgText" : "#0B6477",
+        "darkblue" : "#213A57",
+        "bgDone" : "#14919B",
       }
     },
   },
