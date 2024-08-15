@@ -14,7 +14,7 @@ export const useTaske = create(
               {id: 4,day: "الأربعاء", tasks:[{id: 0,task: "five", state: false}]},
               {id: 5,day: "الخميس", tasks:[{id: 0,task: "six", state: false}]},
               {id: 6,day: "الجمعة", tasks: [{id: 0,task: "seven", state: false}]},
-              {id: 7,day: "تحديات الأسبوع", tasks: [{task: "chang", state: false}]}],
+              {id: 7,day: "تحديات الأسبوع", tasks: [{id: 0,task: "chang", state: false}]}],
       stateTask: (dayId, taskId) => set(
         produce((draft) => {
           draft.data[dayId].tasks[taskId].state = !draft.data[dayId].tasks[taskId].state

@@ -6,3 +6,20 @@
 .no {
     border: 2px solid red;
 }
+
+.card {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+.flip:hover {
+    transform: rotatey(180deg);
+}
+
+.face {
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
