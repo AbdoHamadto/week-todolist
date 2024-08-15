@@ -11,21 +11,35 @@ export const useDayStore = create(persist((set) => ({
         for (let i = 0; i <all.length; i++) {
             if (all[i].dayName === item.dayName) {
                 count = 1;
-                console.log(count)
             }
         }
 
         if (count == 1 ) {
-            console.log(count)
             for (let i = 0; i <all.length; i++) {
                 if (all[i].dayName == item.dayName) {
-                    all[i] = item
+                    all[i].tasks = [...all[i].tasks, item.tasks[0]]
                 }
             }
         }else {
             all = [...all, item]
         }
 
+        return ({day: all})
+      }),
+
+      deleteOne: (item, index) => set((state) => {
+        let all = state.day;
+
+        for (let i = 0; i <all.length; i++) {
+            if (all[i].dayName === item) {
+                console.log(all[i].tasks[index]);
+                let test = all[i].tasks[index].task
+                all[i].tasks = all[i].tasks.filter((one) => one.task != test)
+                console.log(all[i])
+            }
+        }
+
+        
         return ({day: all})
       }),
 
