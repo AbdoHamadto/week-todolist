@@ -40,9 +40,9 @@ export default function Page() {
             <input ref={ref0} type="number" placeholder="ادخل رقم الاسبوع..." className="p-3 appearance-none bg-inherit focus:outline-white text-white font-bold rounded-md"/>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-11/12 mx-auto md:grid-cols-3 xl:grid-cols-4 mb-5">
-           {day.map((item) => {
+           {day.map((item, index) => {
             return(
-                <Card dayy={item} days={days.filter((itemm) => itemm.dayName == item)}/>
+                <Card key={index} dayy={item} days={days.filter((itemm) => itemm.dayName == item)}/>
             )
            })}
         </div>

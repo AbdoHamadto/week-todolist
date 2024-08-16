@@ -20,6 +20,7 @@ export default function Card({dayy, days}) {
           const dataDay = {dayName: dayy, tasks: [{task: ref1.current.value, done: false}]};
           addDay(dataDay);
           ref1.current.value = ""
+          ref1.current.focus()
           forceUpdate()
         }
         
@@ -36,7 +37,7 @@ export default function Card({dayy, days}) {
                     <input ref={ref1} type="text" placeholder="اضف مهمة..." className="w-4/5 h-full rounded-md bg-bgTaskes text-white p-3 appearance-none focus:outline-white"/>
                     <div onClick={done} className="bg-bgTaskes min-w-8 mx-auto text-center text-white rounded-md hover:bg-bgNav transti cursor-pointer p-1 ">تم</div>
                   </div>
-                  {days[0] !== undefined? days[0].tasks.map((item, index) => {
+                  {days[0].tasks.length != 0? days[0].tasks.map((item, index) => {
           
                     return(
                       <div key={index} className="flex justify-between items-center w-full transition-all bg-bgTaskes text-white p-2 mb-1 cursor-pointer hover:bg-bgNav rounded-md">

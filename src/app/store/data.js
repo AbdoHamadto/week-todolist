@@ -3,7 +3,7 @@ import {persist} from 'zustand/middleware'
 
 
 export const useDayStore = create(persist((set) => ({
-    day: [],
+    day: [{dayName: "السبت", tasks: []}, {dayName: "الاحد", tasks: []},{dayName: "الاثنين", tasks: []}, {dayName: "الثلاثاء", tasks: []}, {dayName: "الاربعاء", tasks: []}, {dayName: "الخميس", tasks: []}, {dayName: "الجمعة", tasks: []}, {dayName: "تحديات الاسبوع", tasks: []}],
     addDay: (item) => set((state) => {
         let all = state.day;
         let count = 0;
@@ -43,7 +43,7 @@ export const useDayStore = create(persist((set) => ({
         return ({day: all})
       }),
 
-      deleteAllDay: () => set(() => ({day: []})),
+      deleteAllDay: () => set(() => ({day: [{dayName: "السبت", tasks: []}, {dayName: "الاحد", tasks: []},{dayName: "الاثنين", tasks: []}, {dayName: "الثلاثاء", tasks: []}, {dayName: "الاربعاء", tasks: []}, {dayName: "الخميس", tasks: []}, {dayName: "الجمعة", tasks: []}, {dayName: "تحديات الاسبوع", tasks: []}]})),
 
     weeks: [],
     addWeek: (item) => set((state) => {
