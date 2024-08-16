@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin': 'spin 1s ease-out infinite',
+      },
       backgroundColor: {
         "bgNav" : "#0B6477",
         "bgBody" : "#213A57",
