@@ -11,11 +11,13 @@ const MapTaskesClient = () => {
   const {data, stateTask, stateFlip, weeks} = useDayStore();
   // localStorage.clear() 
 
+  console.log(weeks)
+
   const date = new Date()
   const numWeek = moment(date).week();
   console.log(numWeek)
 
-  const arr = weeks.filter((item) => item.numberWewk === numWeek)
+  const arr = weeks.filter((item) => +item.numberWeek === numWeek)
   console.log(arr)
 
 
