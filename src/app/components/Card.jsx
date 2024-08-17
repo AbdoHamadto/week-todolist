@@ -38,7 +38,7 @@ export default function Card({dayy, days}) {
                     <div onClick={done} className="bg-bgTaskes min-w-8 mx-auto text-center text-white rounded-md hover:bg-bgNav transti cursor-pointer p-1 ">تم</div>
                   </div>
                   {days[0].tasks.length != 0? days[0].tasks.map((item, index) => {
-          
+                    
                     return(
                       <div key={index} className="flex justify-between items-center w-full transition-all bg-bgTaskes text-white p-2 mb-1 cursor-pointer hover:bg-bgNav rounded-md">
                         <p>{item.task}</p>
