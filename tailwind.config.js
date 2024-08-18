@@ -21,7 +21,7 @@ module.exports = {
       colors: {
         "bgText" : "#0B6477",
         "darkblue" : "#213A57",
-        "bgDone" : "#14919B",
+        "bgRemove": "#213A57"
       }
     },
   },
