@@ -17,10 +17,6 @@ const MapTaskesClient = () => {
   const date = new Date()
   const numWeek = moment(date).week();
 
-  // const arr = weeks.filter((item) => +item.numberWeek === numWeek)
-  // console.log(arr)
-  //theDay/query=${indexDay}&${item.day}
-
   return(
     <>
       {data.map((item, indexDay) => 

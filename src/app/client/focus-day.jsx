@@ -77,7 +77,7 @@ const FocusDay = ({id}) => {
         </div>
       </div>
 
-      <div className="click-details w-4/6 bg-bgCard flex flex-col items-center h-[800px] rounded-lg phone:w-full phone:my-4 phone:h-[500px] phone:text-base">
+      <div className="click-details w-4/6 bg-bgCard flex flex-col items-center h-[85vh] rounded-lg phone:w-full phone:my-4 phone:h-[60vh] phone:text-base">
         <div className="my-4 w-4/5 flex justify-center items-center">
           <input 
             type="text" 
@@ -94,7 +94,7 @@ const FocusDay = ({id}) => {
             onClick={add}
           />
         </div>
-        <ul className="py-3 px-4 bg-bgTaske rounded-b-3xl h-[550px] overflow-y-auto w-4/5">
+        <ul className="py-3 px-4 bg-bgTaske rounded-b-3xl h-[70%] overflow-y-auto w-4/5">
           {data[id].tasks.map((item, index) => {return(
             <li key={index} className="relative group overflow-hidden text-lg bg-bgTaskes mt-2 mb-3 py-2 flex justify-between items-center">
               <p onClick={() => stateTask(id, index)} className={`${item.state && "text-red-900 line-through"} click-task w-full cursor-pointer mx-3 text-darkblue text-xl phone:text-base`}>{item.task}</p>
