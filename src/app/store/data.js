@@ -7,13 +7,13 @@ export const useDayStore = create(
   persist(
     (set) => ({
       day: [
-        { dayName: "السبت", tasks: [] },
         { dayName: "الاحد", tasks: [] },
         { dayName: "الاثنين", tasks: [] },
         { dayName: "الثلاثاء", tasks: [] },
         { dayName: "الاربعاء", tasks: [] },
         { dayName: "الخميس", tasks: [] },
         { dayName: "الجمعة", tasks: [] },
+        { dayName: "السبت", tasks: [] },
         { dayName: "تحديات الاسبوع", tasks: [] },
       ],
       addDay: (item) =>
@@ -59,13 +59,13 @@ export const useDayStore = create(
       deleteAllDay: () =>
         set(() => ({
           day: [
-            { dayName: "السبت", tasks: [] },
             { dayName: "الاحد", tasks: [] },
             { dayName: "الاثنين", tasks: [] },
             { dayName: "الثلاثاء", tasks: [] },
             { dayName: "الاربعاء", tasks: [] },
             { dayName: "الخميس", tasks: [] },
             { dayName: "الجمعة", tasks: [] },
+            { dayName: "السبت", tasks: [] },
             { dayName: "تحديات الاسبوع", tasks: [] },
           ],
         })),
@@ -124,6 +124,21 @@ export const useDayStore = create(
             draft.data[dayId].flip = !draft.data[dayId].flip;
           })
         ),
+
+        setEvaluation: (item) =>
+          set((state) => {
+            let all = state.weeks;
+  
+            for (let i = 0; i < all.length; i++) {
+              if (all[i].numberWeek === item) {
+                const done = all[i].daysWeek[0].tasks.filter((one) => one.done).length + all[i].daysWeek[1].tasks.filter((one) => one.done).length + all[i].daysWeek[2].tasks.filter((one) => one.done).length + all[i].daysWeek[3].tasks.filter((one) => one.done).length + all[i].daysWeek[4].tasks.filter((one) => one.done).length + all[i].daysWeek[5].tasks.filter((one) => one.done).length + all[i].daysWeek[6].tasks.filter((one) => one.done).length + all[i].daysWeek[7].tasks.filter((one) => one.done).length;
+                const alltask = all[i].daysWeek[0].tasks.length + all[i].daysWeek[1].tasks.length + all[i].daysWeek[2].tasks.length + all[i].daysWeek[3].tasks.length + all[i].daysWeek[4].tasks.length + all[i].daysWeek[5].tasks.length + all[i].daysWeek[6].tasks.length + all[i].daysWeek[7].tasks.length 
+                all[i].evaluation = done / alltask * 100
+              }
+            }
+
+            return { weeks: all };
+          }),
     }),
     {
       name: "week",
