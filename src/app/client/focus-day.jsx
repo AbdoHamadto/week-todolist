@@ -47,7 +47,7 @@ const FocusDay = ({id}) => {
 
   return(
     <div className="w-11/12 flex justify-center items-center phone:flex-col mx-auto">
-      <div className="w-2/6 flex flex-col items-center phone:w-full">
+      <div className="w-2/6 flex flex-col items-center justify-center phone:w-full h-[85vh] phone:h-fit">
         <div className="w-3/5 phone:flex phone:w-full phone:my-4">
           <div className="click-no w-full bg-bgCard my-4 p-2 flex flex-col rounded-lg phone:my-0 phone:p-1 phone:ml-2">
             <p className="w-4/5 p-2 rounded-lg text-xl font-bold mt-2 mb-4 mx-auto text-center bg-bgNav text-white phone:text-base phone:p-1">الإسبوع</p>
