@@ -13,20 +13,6 @@ const MapTaskesClient = () => {
 
   const {data, stateTask, stateFlip} = useTaske();
   // localStorage.clear() 
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-  const lightRef = useRef(null);
-
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      setPosition({ x: event.clientX, y: event.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);  
-
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
 
   const date = new Date()
   const numWeek = moment(date).week();
@@ -37,7 +23,6 @@ const MapTaskesClient = () => {
 
   return(
     <>
-      <div className="cursor-light" ref={lightRef} style={{ left: position.x, top: position.y }}></div>
       {data.map((item, indexDay) => 
         <div key={indexDay} className={`${item.flip && "flip"} click-details card relative mt-12 h-[370px]`}>
           <div className="face p-3 rounded-3xl h-full absolute w-full bg-bgCard">

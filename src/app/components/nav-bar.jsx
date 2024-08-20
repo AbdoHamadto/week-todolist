@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NavBar = () => {
   return (
-    <div className="flex sticky top-0 z-10 bg-bgTaskes p-2 justify-around text-white font-bold text-xl">
+    <div className="click-details flex sticky top-0 z-10 bg-bgTaskes p-2 justify-around text-white font-bold text-xl">
       <Link href="/allWeeks" className="click hover:text-bgText">
         الأسبوع السابق
       </Link>

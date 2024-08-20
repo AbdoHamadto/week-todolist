@@ -28,12 +28,12 @@ body {
     cursor: url("./image/navigate.png"), auto;
 }
 
-.click-task{
-    cursor: url("./image/pen.png"), auto;
+.click-details {
+    cursor: url("./image/cursor.png"), auto;
 }
 
-.click-details {
-    cursor: url("./image/writing.png"), auto;
+.click-task{
+    cursor: url("./image/pen.png"), auto;
 }
 
 .click {
@@ -45,19 +45,9 @@ body {
 }
 
 .click-rubbish{
-    cursor: url("./image/rubbish-bin.png"), auto;
+    cursor: url("./image/bin.png"), auto;
 }
 
 .click-undo{
     cursor: url("./image/undo.png"), auto;
-}
-
-.cursor-light {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: transparent;
-    background-color: rgb(42, 83, 114);
-    box-shadow: 0 0 10px 60px rgb(42, 83, 114);
 }
