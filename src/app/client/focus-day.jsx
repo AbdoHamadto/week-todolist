@@ -33,41 +33,42 @@ const FocusDay = ({id}) => {
   const hour = 24 - date.getHours()
 
   let rating = data[id].tasks.filter((item) => item.state === true).length / data[id].tasks.length * 100 | 0;
+  let text;
   if(rating < 50) {
-    rating = "قوم شوف اللي وراك 😡"
+    text = "قوم شوف اللي وراك 😡"
   } else if(rating < 65 && rating >= 50) {
-    rating = "هعدهالك 😐"
+    text = "هعدهالك 😐"
   } else if(rating < 75 && rating >= 65) {
-    rating = "كويس نوعا ما 😌"
+    text = "كويس نوعا ما 😌"
   } else if(rating < 85 && rating >= 75){
-    rating = "جامد 😊"
+    text = "جامد 😊"
   } else if (rating >= 85) {
-    rating = "انت مفيش منك اتنين 🥰"
+    text = "انت مفيش منك اتنين 🥰"
   }
 
   return(
     <div className="w-11/12 flex justify-center items-center phone:flex-col mx-auto">
       <div className="w-2/6 flex flex-col items-center justify-center phone:w-full h-[85vh] phone:h-fit">
-        <div className="w-3/5 phone:flex phone:w-full phone:my-4">
-          <div className="click-no w-full bg-bgCard my-4 p-2 flex flex-col rounded-lg phone:my-0 phone:p-1 phone:ml-2">
+        <div className="w-3/5 phone:flex phone:w-full phone:my-4 tall:flex tall:w-11/12 tall:items-center">
+          <div className="click-no w-full bg-bgCard my-4 p-2 flex flex-col rounded-lg phone:my-0 phone:p-1 phone:ml-2 tall:my-2">
             <p className="w-4/5 p-2 rounded-lg text-xl font-bold mt-2 mb-4 mx-auto text-center bg-bgNav text-white phone:text-base phone:p-1">الإسبوع</p>
             <p className="w-3/5 p-2 rounded-lg text-xl font-bold mb-2 mx-auto text-center bg-bgNav text-white phone:text-base phone:p-1">{numWeek}</p>
           </div>
-          <div className="click-no w-full bg-bgCard p-2 rounded-lg phone:my-auto phone:h-fit phone:p-1">
+          <div className="click-no w-full bg-bgCard p-2 rounded-lg phone:my-auto phone:h-fit phone:p-1 tall:h-fit tall:mr-2">
             <p className="w-4/5 p-2 rounded-lg text-xl font-bold my-2 mx-auto text-center bg-bgNav text-white phone:text-base phone:p-1">{data[id].day}</p>
           </div>
         </div>
-        <div className="w-3/5 phone:flex phone:w-full phone:mb-4">
-          <div className="click-no w-full bg-bgCard my-4 p-2 rounded-lg phone:my-0 phone:p-1 phone:ml-2">
+        <div className="w-3/5 phone:flex phone:w-full phone:mb-4 tall:flex tall:w-11/12">
+          <div className="click-no w-full bg-bgCard my-4 p-2 rounded-lg phone:my-0 phone:p-1 phone:ml-2 tall:my-2">
             <p className="w-4/5 p-2 rounded-lg text-xl font-bold my-2 mx-auto text-center bg-bgNav text-white phone:text-base phone:p-1">الوقت المتبقي</p>
             <div className="flex flex-col items-center justify-center">
               <p className="text-darkblue text-2xl phone:text-base">{day} أيام</p>
               <p className="text-darkblue text-2xl phone:text-base">{hour} ساعات</p>
             </div>
           </div>
-          <div className="click-no w-full bg-bgCard my-4 p-2 flex flex-col rounded-lg phone:my-0 phone:p-1">
+          <div className="click-no w-full bg-bgCard my-4 p-2 flex flex-col rounded-lg phone:my-0 phone:p-1  tall:mr-2">
             <p className="w-4/5 p-2 rounded-lg text-xl font-bold my-2 mx-auto text-center bg-bgNav text-white phone:text-base phone:p-1">{ data[id].tasks.filter((item) => item.state === true).length / data[id].tasks.length * 100 | 0 }%</p>
-            <p className="w-3/5 p-2 rounded-lg text-xl font-bold mb-2 mx-auto text-center bg-bgNav text-white phone:text-base phone:p-1">{rating}</p>
+            <p className="w-3/5 p-2 rounded-lg text-xl font-bold mb-2 mx-auto text-center bg-bgNav text-white phone:text-base phone:p-1 tall:w-full">{text}</p>
           </div>
         </div>
         <div className="click-no w-3/5 bg-bgCard p-2 rounded-lg flex flex-col items-center phone:my-0 phone:w-2/5 phone:p-1">
@@ -110,11 +111,11 @@ const FocusDay = ({id}) => {
         </ul>
         <button 
           onClick={() => removeAll(id)}
-          className="click-rubbish w-3/5 p-2 bg-bgTaske hover:bg-bgTaskes hover:text-bgRemove my-8 font-bold text-xl phone:p-1 phone:text-lg phone:my-4"
+          className="click-rubbish w-3/5 p-2 bg-bgTaske hover:bg-bgTaskes hover:text-bgRemove my-4 font-bold text-xl phone:p-1 phone:text-lg phone:my-4"
         >
           حذف الكل
         </button>
-        <Link href="/" className="click-undo w-2/5 p-2 bg-bgTaske hover:bg-bgTaskes hover:text-bgRemove font-bold text-center phone:p-1 phone:text-lg phone:mb-4">رجوع</Link>
+        <Link href="/" className="click-undo w-2/5 p-2 mb-4 bg-bgTaske hover:bg-bgTaskes hover:text-bgRemove font-bold text-center phone:p-1 phone:text-lg phone:mb-4">رجوع</Link>
       </div>
     </div>
   )
