@@ -24,7 +24,7 @@ const MapTaskesClient = () => {
   return(
     <>
       {data.map((item, indexDay) => 
-        <div key={indexDay} className={`${item.flip && "flip"} click-details card relative mt-12 h-[370px]`}>
+        <div key={indexDay} className={`${item.flip && "flip"} click-details card relative mt-12 h-[370px] phone:mt-8`}>
           <div className="face p-3 rounded-3xl h-full absolute w-full bg-bgCard">
             <div className="flex items-center justify-center">
               <Link href={`/theDay/query=${indexDay}&${item.day}`}>

@@ -22,6 +22,9 @@ module.exports = {
         "bgText" : "#0B6477",
         "darkblue" : "#213A57",
         "bgRemove": "#213A57"
+      },
+      screens: {
+        'phone': { max: '767px' },
       }
     },
   },
