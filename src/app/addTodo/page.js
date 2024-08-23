@@ -45,7 +45,6 @@ export default function Page() {
 
       const weekarray = {
         numberWeek: ref0.current.value,
-        flip: false,
         weekDone: false,
         evaluation: 0,
         daysWeek: days,
@@ -68,13 +67,13 @@ export default function Page() {
           ref={ref0}
           type="number"
           placeholder={`اقل رقم للاسبوع هو ${numWeek + 1}`}
-          className="p-3 appearance-none bg-inherit focus:outline-white !focus:border-none text-white font-bold rounded-md"
+          className="p-3 appearance-none bg-inherit outline-white  text-white font-bold rounded-md"
         />
       </div>
       <textarea
         ref={area}
         placeholder="اكتب تحفيز لنفسك او تذكير"
-        className="w-4/5 mx-auto my-5 block appearance-none bg-inherit focus:outline-white focus:border-none text-white p-3"
+        className="w-4/5 mx-auto my-5 block appearance-none bg-inherit outline-white focus:border-none text-white p-3"
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-11/12 mx-auto md:grid-cols-3 xl:grid-cols-4 mb-5">
         {day.map((item, index) => {

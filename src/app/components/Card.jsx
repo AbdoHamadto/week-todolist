@@ -34,7 +34,7 @@ export default function Card({ dayy, days }) {
     if (key === "Enter" && ref1.current.value != "") {
       const dataDay = {
         dayName: dayy,
-        tasks: [{ task: ref1.current.value, done: false }],
+        tasks: [{id: Date.now(), task: ref1.current.value, done: false }],
       };
       addDay(dataDay);
       if (ref1.current.value == "r7") {
@@ -52,7 +52,6 @@ export default function Card({ dayy, days }) {
           emojis: ["قدها"],
         });
       }
-      
     }
   };
 
@@ -70,7 +69,7 @@ export default function Card({ dayy, days }) {
             type="text"
             onKeyDown={handleKeyDown}
             placeholder="اضف مهمة..."
-            className="w-4/5 h-full rounded-md bg-bgTaskes text-white p-3 appearance-none focus:outline-white"
+            className="w-4/5 h-full rounded-md bg-bgTaskes text-white p-3 appearance-none outline-white"
           />
           <div
             onClick={done}
