@@ -30,7 +30,7 @@ export default function Page() {
   const saveWeek = () => {
     if (
       ref0.current.value === "" ||
-      ref0.current.value <= numWeek ||
+      // ref0.current.value <= numWeek ||
       ref0.current.value % 1 != 0
     ) {
       scroll({

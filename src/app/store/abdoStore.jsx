@@ -3,7 +3,6 @@ import { create } from "zustand";
 // import {immer} from "zustand/middleware/immer"
 import { produce } from "immer";
 
-
 export const useTaske = create(
   // persist(
     (set) => ({
@@ -27,25 +26,9 @@ export const useTaske = create(
           draft.data[dayId].flip = !draft.data[dayId].flip
         })
       ),
-      removeAll: (dayId) => set(
-        produce((draft) => {
-          draft.data[dayId].tasks = []
-        })
-      ),
-      addTask: (dayId, word) => set(
-        produce((draft) => {
-          draft.data[dayId].tasks = [...draft.data[dayId].tasks, {id: Date.now(), task: word, state: false}]
-        })
-      ),
-      removeTask: (dayId, taskId) =>
-        set((state) =>
-          produce(state, (draft) => {
-            draft.data[dayId].tasks = draft.data[dayId].tasks.filter(
-              (task) => task.id !== taskId
-              );
-          }
-        )
-      ),
+      
+      
+      
     }), {
       name: "todolist-week"
     }
