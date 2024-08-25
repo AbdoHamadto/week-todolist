@@ -2,15 +2,20 @@
 import Link from "next/link";
 import NavBar from "../components/nav-bar";
 import { useDayStore } from "../store/data";
+import moment from "moment";
 
 export default function AllWeeks() {
   const weeks = useDayStore((state) => state.weeks);
+
+  const date = new Date()
+  const numWeek = moment(date).week();
+  const seletWeeks = weeks.filter((item) => item.numberWeek <= numWeek)
 
   return (
     <div>
       <NavBar />
       <div className="flex flex-wrap gap-5 mt-6 justify-center">
-        {weeks.map((item, index) => {
+        {seletWeeks.map((item, index) => {
           return (
             <Link href={`/${index}`} key={index}>
               <div

@@ -7,7 +7,7 @@ const date = new Date()
 const numWeek = moment(date).week()
 
 export const useDayStore = create(
-  persist(
+  // persist(
     (set) => ({
       day: [
         { dayName: "الاحد",flip: false, tasks: [] },
@@ -104,7 +104,20 @@ export const useDayStore = create(
           );
           return console.log(arr);
         }),
-      
+      obj: {
+        numberWeek: numWeek,
+        evaluation: 0,
+        daysWeek: [
+          { dayName: "الاحد",flip: false, tasks: [] },
+          { dayName: "الاثنين",flip: false, tasks: [] },
+          { dayName: "الثلاثاء",flip: false, tasks: [] },
+          { dayName: "الاربعاء",flip: false, tasks: [] },
+          { dayName: "الخميس",flip: false, tasks: [] },
+          { dayName: "الجمعة",flip: false, tasks: [] },
+          { dayName: "السبت",flip: false, tasks: [] },
+          { dayName: "تحديات الاسبوع",flip: false, tasks: [] },
+        ],
+      },
       stateTask: (dayId, taskId) =>
         set(
           produce((draft) => {
@@ -156,8 +169,8 @@ export const useDayStore = create(
             return { weeks: all };
           }),
     }),
-    {
-      name: "week",
-    }
-  )
+  //   {
+  //     name: "week",
+  //   }
+  // )
 );

@@ -9,13 +9,16 @@ import todo from "./image/todo.png"
 
 const MapTaskesClient = () => {
 
-  const {weeks, stateTask, stateFlip} = useDayStore();
-  // localStorage.clear() 
+  const {weeks, stateTask, stateFlip, obj} = useDayStore();
 
   const date = new Date()
   const numWeek = moment(date).week();
 
-  const data = weeks.filter((item) => item.numberWeek == numWeek)
+  let data = weeks.filter((item) => item.numberWeek == numWeek)
+  if (data.length === 0) {
+    data = weeks.push(obj)
+    data = weeks.filter((item) => item.numberWeek == numWeek)
+  }
 
 
   return(

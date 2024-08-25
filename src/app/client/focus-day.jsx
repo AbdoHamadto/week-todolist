@@ -31,6 +31,7 @@ const FocusDay = ({id}) => {
   const date = new Date()
   const numWeek = moment(date).week();
   const data = weeks.filter((item) => item.numberWeek == numWeek)
+  console.log("hi")
 
   const day = 6 - date.getDay()
   const hour = 24 - date.getHours()
@@ -75,7 +76,7 @@ const FocusDay = ({id}) => {
           </div>
         </div>
         <div className="click-no w-3/5 bg-bgCard p-2 rounded-lg flex flex-col items-center phone:my-0 phone:w-2/5 phone:p-1">
-          <p className="my-4 text-darkblue text-3xl phone:text-xl phone:my-2">{data[0].daysWeek[id].tasks.filter((item) => item.state === true).length}</p>
+          <p className="my-4 text-darkblue text-3xl phone:text-xl phone:my-2">{data[0].daysWeek[id].tasks.filter((item) => item.done === true).length}</p>
           <div className="w-2/4 h-1 bg-bgNav"/>
           <p className="my-4 text-darkblue text-3xl phone:text-xl phone:my-2">{data[0].daysWeek[id].tasks.length}</p>
         </div>
