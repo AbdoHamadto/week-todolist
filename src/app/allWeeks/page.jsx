@@ -9,7 +9,7 @@ export default function AllWeeks() {
 
   const date = new Date()
   const numWeek = moment(date).week();
-  const seletWeeks = weeks.filter((item) => item.numberWeek <= numWeek)
+  const seletWeeks = weeks.filter((item) => item.numberWeek < numWeek)
 
   return (
     <div>

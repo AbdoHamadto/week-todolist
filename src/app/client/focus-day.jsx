@@ -31,7 +31,6 @@ const FocusDay = ({id}) => {
   const date = new Date()
   const numWeek = moment(date).week();
   const data = weeks.filter((item) => item.numberWeek == numWeek)
-  console.log("hi")
 
   const day = 6 - date.getDay()
   const hour = 24 - date.getHours()
