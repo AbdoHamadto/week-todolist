@@ -13,7 +13,6 @@ const MapTaskesClient = () => {
 
   const date = new Date()
   const numWeek = moment(date).week();
-  // localStorage.clear()
 
   let data = weeks.filter((item) => item.numberWeek == numWeek)
   if (data.length === 0) {

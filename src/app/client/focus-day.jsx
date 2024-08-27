@@ -35,7 +35,7 @@ const FocusDay = ({id}) => {
   const day = 6 - date.getDay()
   const hour = 24 - date.getHours()
 
-  let rating = data[0].daysWeek[id].tasks.filter((item) => item.state === true).length / data[0].daysWeek[id].tasks.length * 100 | 0;
+  let rating = data[0].daysWeek[id].tasks.filter((item) => item.done === true).length / data[0].daysWeek[id].tasks.length * 100 | 0;
   let text;
   if(rating < 50) {
     text = "قوم شوف اللي وراك 😡"
@@ -70,7 +70,7 @@ const FocusDay = ({id}) => {
             </div>
           </div>
           <div className="click-no w-full bg-bgCard my-4 p-2 flex flex-col rounded-lg phone:my-0 phone:p-1  tall:mr-2">
-            <p className="w-4/5 p-2 rounded-lg text-xl font-bold my-2 mx-auto text-center bg-bgNav text-white phone:text-base phone:p-1">{ data[0].daysWeek[id].tasks.filter((item) => item.state === true).length / data[0].daysWeek[id].tasks.length * 100 | 0 }%</p>
+            <p className="w-4/5 p-2 rounded-lg text-xl font-bold my-2 mx-auto text-center bg-bgNav text-white phone:text-base phone:p-1">{ data[0].daysWeek[id].tasks.filter((item) => item.done === true).length / data[0].daysWeek[id].tasks.length * 100 | 0 }%</p>
             <p className="w-3/5 p-2 rounded-lg text-xl font-bold mb-2 mx-auto text-center bg-bgNav text-white phone:text-base phone:p-1 tall:w-full">{text}</p>
           </div>
         </div>
