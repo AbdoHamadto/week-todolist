@@ -56,7 +56,7 @@ export default function Card({ dayy, days }) {
   };
 
   return (
-    <div className="h-[370px] mt-12 p-3 rounded-3xl bg-bgCard ">
+    <div className="click-details h-[370px] mt-12 p-3 rounded-3xl bg-bgCard ">
       <p className="w-4/5 p-3 rounded-lg text-xl text-white font-bold mt-2 mb-2 mx-auto text-center bg-bgNav">
         {dayy}
       </p>
@@ -69,11 +69,11 @@ export default function Card({ dayy, days }) {
             type="text"
             onKeyDown={handleKeyDown}
             placeholder="اضف مهمة..."
-            className="w-4/5 h-full rounded-md bg-bgTaskes text-white p-3 appearance-none outline-white"
+            className="w-4/5 h-full rounded-md bg-bgTaskes p-3 appearance-none outline-white text-darkblue"
           />
           <div
             onClick={done}
-            className="bg-bgTaskes min-w-8 mx-auto text-center text-white rounded-md hover:bg-bgNav transti cursor-pointer p-1 "
+            className="bg-bgTaskes click min-w-8 mx-auto text-center text-darkblue hover:text-white rounded-md hover:bg-bgNav transti cursor-pointer p-1 "
           >
             تم
           </div>
@@ -83,7 +83,7 @@ export default function Card({ dayy, days }) {
             return (
               <div
                 key={index}
-                className="flex justify-between items-center w-full transition-all bg-bgTaskes text-white p-2 mb-1 cursor-pointer hover:bg-bgNav rounded-md"
+                className="flex justify-between items-center click group w-full transition-all bg-bgTaskes text-darkblue hover:text-white p-2 mb-1 cursor-pointer hover:bg-bgNav rounded-md"
               >
                 <p>{item.task}</p>
                 <p
@@ -99,7 +99,7 @@ export default function Card({ dayy, days }) {
             );
           })
         ) : (
-          <p>لايوجد مهمات...</p>
+          <p className="text-darkblue text-xl font-bold">لايوجد مهمات...</p>
         )}
       </div>
     </div>

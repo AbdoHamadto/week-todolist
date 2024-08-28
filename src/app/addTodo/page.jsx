@@ -30,7 +30,8 @@ export default function Page() {
   const saveWeek = () => {
     if (
       ref0.current.value === "" ||
-      // ref0.current.value <= numWeek ||
+      ref0.current.value <= numWeek ||
+      ref0.current.value > 53 ||
       ref0.current.value % 1 != 0
     ) {
       scroll({
@@ -89,7 +90,7 @@ export default function Page() {
       <div className="w-full flex justify-center">
         <div
           onClick={saveWeek}
-          className="p-2 bg-bgTaskes text-white font-bold text-2xl rounded-md hover:bg-bgNav transition-all hover:p-3 cursor-pointer ml-5"
+          className="click p-2 bg-bgTaskes text-white font-bold text-2xl rounded-md hover:bg-bgNav transition-all hover:p-3 cursor-pointer ml-5"
         >
           حفظ الكل
         </div>
@@ -97,7 +98,7 @@ export default function Page() {
           <div
             onClick={deleteAll}
             ref={ref00}
-            className="p-2 bg-bgTaskes text-white font-bold text-2xl rounded-md hover:bg-bgNav transition-all hover:p-3 cursor-pointer"
+            className="click p-2 bg-bgTaskes text-white font-bold text-2xl rounded-md hover:bg-bgNav transition-all hover:p-3 cursor-pointer"
           >
             رجوع
           </div>

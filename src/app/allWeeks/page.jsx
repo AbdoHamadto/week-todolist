@@ -12,14 +12,14 @@ export default function AllWeeks() {
   const seletWeeks = weeks.filter((item) => item.numberWeek < numWeek)
 
   return (
-    <div>
+    <div className="min-h-dvh">
       <NavBar />
       <div className="flex flex-wrap gap-5 mt-6 justify-center">
         {seletWeeks.map((item, index) => {
           return (
             <Link href={`/${index}`} key={index}>
               <div
-                className="flex justify-between items-center  bg-bgCard rounded-lg text-2xl font-bold text-white p-4 w-80 mx-auto hover:bg-bgNav transition-colors cursor-pointer"
+                className="click flex justify-between items-center  bg-bgCard rounded-lg text-2xl font-bold text-white p-4 w-80 mx-auto hover:bg-bgNav transition-colors cursor-pointer"
                 key={index}
               >
                 <p>الاسبوع: {item.numberWeek}</p>
